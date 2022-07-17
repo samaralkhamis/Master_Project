@@ -29,7 +29,6 @@
 	<link rel="stylesheet" href="{{ asset('/css/main.css') }}">
 	<!-- responsive -->
 	<link rel="stylesheet" href="{{ asset('/css/responsive.css') }}">
-
 </head>
 <body>
 	
@@ -49,7 +48,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index_2.html">
+							<a href="/">
 								<img src="{{ asset('/img/logo.png') }}" alt="logo" width="55%">
 							</a>
 						</div>
@@ -58,44 +57,31 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="index_2.html">Home</a>
+								<li class="current-list-item"><a href="/">Home</a>
 								</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="404.html">404 page</a></li>
-										<li><a href="about.html">About</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="news.html">News</a></li>
-										<li><a href="shop.html">Shop</a></li>
-									</ul>
-								</li>
+								<li><a href="/About">About Us</a></li>
+								<li><a href="/Contact">Contact Us</a></li>
 								<li><a href="news.html">News</a>
 									<ul class="sub-menu">
 										<li><a href="news.html">News</a></li>
 										<li><a href="single-news.html">Single News</a></li>
 									</ul>
 								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
+								<li><a href="/Shop">Shop</a>
 									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
+										<li><a href="/Shop">Shop</a></li>
+										<li><a href="/Checkout">Check Out</a></li>
 										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<a class="shopping-cart" href="/Cart"><i class="fas fa-shopping-cart" style="font-size:20px"></i></a>
+										<a class="mobile-hide search-bar-icon" href="/home"><i class="far fa-id-card" style="font-size:20px"></i></a>
 									</div>
 								</li>
 							</ul>
 						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 						<div class="mobile-menu"></div>
 						<!-- menu end -->
 					</div>
@@ -105,7 +91,7 @@
 	</div>
 	<!-- end header -->
 	
-	<!-- search area -->
+	{{-- <!-- search area -->
 	<div class="search-area">
 		<div class="container">
 			<div class="row">
@@ -121,5 +107,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- end search area -->

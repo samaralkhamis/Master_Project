@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Layout.Master');
+    return view('Layout.welcome');
 });
 
 Route::get('/Contact', function () {
@@ -32,3 +32,13 @@ Route::get('/Cart', function () {
 Route::get('/Checkout', function () {
     return view('layout.Checkout');
 });
+
+Route::get('/Shop', function () {
+    return view('layout.Shop');
+});
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'profile'])->name('home');
