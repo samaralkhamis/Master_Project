@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReservationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +41,11 @@ Route::get('/Shop', function () {
 });
 
 Auth::routes();
-
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'profile'])->name('home');
+Route::get('/Shop', [ProductController::Class,'ViewProduct']); 
+
+Route::get('/Reservation', [ReservationController::Class,'viewReservation']);
+Route::post('/Reservation', [ReservationController::class, 'Reservation']);
+
+Route::get('/SingleProduct/id/{id}', [ProductController::Class,'singleProduct']); 

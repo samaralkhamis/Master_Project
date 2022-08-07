@@ -7,12 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <style>
-        body {
-            background-color: #e3dada;
-        }
+       
 
         #regForm {
-            background-color: #ffffff;
+            background-color: #b5b3b3;
             margin: 100px auto;
             font-family: Raleway;
             padding: 40px;
@@ -24,17 +22,9 @@
             text-align: center;
         }
 
-        input {
-            padding: 10px;
-            width: 100%;
-            font-size: 17px;
-            font-family: Raleway;
-            border: 1px solid #aaaaaa;
-        }
-
         /* Mark input boxes that gets an error on validation: */
         input.invalid {
-            background-color: #ffdddd;
+            background-color: #eeadad;
         }
 
         /* Hide all steps by default: */
@@ -43,7 +33,7 @@
         }
 
         button {
-            background-color: #04AA6D;
+            background-color: #F28123;
             color: #ffffff;
             border: none;
             padding: 10px 20px;
@@ -57,7 +47,7 @@
         }
 
         #prevBtn {
-            background-color: #bbbbbb;
+            background-color: #cac7c7;
         }
 
         /* Make circles that indicate the steps of the form: */
@@ -65,7 +55,7 @@
             height: 15px;
             width: 15px;
             margin: 0 2px;
-            background-color: #bbbbbb;
+            background-color: #cac7c7;
             border: none;
             border-radius: 50%;
             display: inline-block;
@@ -78,7 +68,7 @@
 
         /* Mark the steps that are finished and valid: */
         .step.finish {
-            background-color: #04AA6D;
+            background-color: #F28123;
         }
     </style>
 
@@ -103,57 +93,16 @@
             <h1>Laravel 8 Step Form User Register:</h1>
             <!-- One "tab" for each step in the form: -->
             <div class="tab">
-                <div class="col-md-12 col-md-7 ">
+
+                <a href="/Reservation"> Go to Reserve a Date</a>
+                {{-- <div class="col-md-12 col-md-7 ">
                     <div class="booking-form">
-                        <form>
-                            {{-- <div class="form-group">
-                    <p class="text mb-1">start Time</p>
-                    <input class="form-control mb-3" type="text" placeholder="Name" />
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <span class="form-label ">Pick Up Location</span>
-                            <select name="Jordan">
-                            <option value="Aqaba">Aqaba</option>
-                            <option value="Ma'an">Ma'an</option>
-                            <option value="Altafelah">Altafelah</option>
-                            <option value="Alkarak">Alkarak</option>
-                            <option value="Amman">Amman</option>
-                            <option value="jarash">Jarash</option>
-                            <option value="Alzarqaa">Alzarqaa</option>
-                            <option value="Madaba">Madaba</option>
-                            <option value="Alsalt">Alsalt</option>
-                            <option value="Almafraq">Almafraq</option>
-                            <option value="Irbid">Irbid</option>
-                            <option value="Ajloun">Ajloun</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <span class="form-label ">Pick Up Location</span>
-                            <select name="Jordan">
-                            <option value="Aqaba">Aqaba</option>
-                            <option value="Ma'an">Ma'an</option>
-                            <option value="Altafelah">Altafelah</option>
-                            <option value="Alkarak">Alkarak</option>
-                            <option value="Amman">Amman</option>
-                            <option value="jarash">Jarash</option>
-                            <option value="Alzarqaa">Alzarqaa</option>
-                            <option value="Madaba">Madaba</option>
-                            <option value="Alsalt">Alsalt</option>
-                            <option value="Almafraq">Almafraq</option>
-                            <option value="Irbid">Irbid</option>
-                            <option value="Ajloun">Ajloun</option>
-                            </select>
-                        </div>
-                    </div>
-                </div> --}}
-                            {{-- <div class="row"> --}}
+                        <form action="{{url('Reservation')}}">
+                            @csrf
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <span class="form-label">Pick Up Location</span>
-                                    <select class="form-control">
+                                    <select class="form-control" name="PickupLocation">
                                         <option value="Aqaba">Aqaba</option>
                                         <option value="Ma'an">Ma'an</option>
                                         <option value="Altafelah">Altafelah</option>
@@ -174,7 +123,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <span class="form-label">Drop-Off Location</span>
-                                    <select class="form-control">
+                                    <select class="form-control" name="DropOffLocation">
                                         <option value="Aqaba">Aqaba</option>
                                         <option value="Ma'an">Ma'an</option>
                                         <option value="Altafelah">Altafelah</option>
@@ -196,39 +145,140 @@
                                     <span class="form-label">
                                         Start Time
                                     </span>
-                                    <input type="datetime-local" class="form-control">
+                                    <input type="datetime-local" class="form-control" name="StartTime">
                                     <span class="select-arrow"></span>
                                 </div>
                             </div>
-                </form>
-                </div>
-                </div>
+                        </form>
+                    </div>
+                </div> --}}
             </div>
 
-        <div class="tab">
-            <div class="col-md-6">
-                boxes & accessories                
+            <div class="tab">
+                <section class="section-style">
+                    <div class="board-wrapper">
+                        <div class="board-inner">
+                            <div class="latest-news mt-200 mb-200">
+                                <div class="container">
+                                    <div class="row">
+                                        @foreach ($product as $data)
+                                            <div class="col-lg-4 col-md-6">
+                                                <div class="single-latest-news">
+                                                    <a href="">
+                                                        <input type="hidden" name="product_id" value="{{$data->product_id}}">
+                                                        <div>
+                                                            <img src={{ $data->productImg }} alt="product" name="productImg" class="latest-news-bg">
+                                                        </div>
+                                                    </a>
+                                                    <div class="news-text-box">
+                                                        <h3><a href="/SingleProduct/id/{{$data->product_id}}" name="productName">{{ $data->productName }} </a></h3>
+                                                        <p class="blog-meta"><i class="fas fa-dollar-sign"></i>PRICE :
+                                                            <span class="author" name="productPrice">   {{ $data->productPrice}} JD
+                                                             </span>
+                                                        </p>
+                                                        <a href="" class="btn" style="background-color: #F28123;">Add To Cart <i
+                                                                class="fas fa-angle-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </div>
-        <div class="tab">
-           moving labor
-        </div>
-        <div class="tab">
-          Trucks
-        </div>
-        <div style="overflow:auto;">
-            <div style="float:right;">
-                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            <div class="tab">
+                <section class="section-style">
+                    <div class="board-wrapper">
+                        <div class="board-inner">
+                            <div class="latest-news mt-200 mb-200">
+                                <div class="container">
+                                    <div class="row">
+                                        @foreach ($labor as $labor)
+                                            <div class="col-lg-4 col-md-6">
+                                                <div class="single-latest-news">
+                                                    <a href="">
+                                                        <div>
+                                                            
+                                                        </div>
+                                                    </a>
+                                                    <div class="news-text-box">
+                                                        <h3><a href="" name="LaborFName">{{ $labor->LaborFName }}-{{ $labor->LaborLName }} </a></h3>
+                                                        <p class="blog-meta"><i class="fas fa-dollar-sign"></i>PRICE :
+                                                            <span class="author">   {{ $labor->Status }} JD
+                                                             </span>
+                                                        </p>
+                                                        {{-- <p class="excerpt">{{ $labor->productDescription }}</p>
+                                                        <p class="excerpt">Category : Product /{{ $labor->productCategory }}</p>
+                                                        <a href="" class="btn" style="background-color: #F28123;">Add To Cart <i
+                                                                class="fas fa-angle-right"></i></a>  --}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
             </div>
-        </div>
-        <!-- Circles which indicates the steps of the form: -->
-        <div style="text-align:center;margin-top:40px;">
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-        </div>
+            <div class="tab">
+                Trucks
+                <section class="section-style">
+                    <div class="board-wrapper">
+                        <div class="board-inner">
+                            <div class="latest-news mt-200 mb-200">
+                                <div class="container">
+                                    <div class="row">
+                                        @foreach ($trucks as $trucks)
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="single-latest-news">
+                                                <a href="">
+                                                    <div>
+                                                        <img src={{ $trucks->TruckImg }} alt="product"  class="latest-news-bg" name="TruckImg">
+                                                    </div>
+                                                </a>
+                                                <div class="news-text-box">
+                                                    <p class="blog-meta"><i class="fas fa-dollar-sign"></i>PRICE :<span class="author"></p>  
+                                                    <p class="excerpt"><span  name="TruckDes"> {{ $trucks->TruckDes }}</span></p>
+                                                    <p class="excerpt" >Dimention :<span name="Dimention"> {{ $trucks->Dimention }}</span> </p>
+                                                    <p class="excerpt" >Deck_height  : <span name="Deck_height">{{ $trucks->Deck_height }} </span></p>
+                                                    <p class="excerpt" name="Door_Opening">Door_Opening :{{ $trucks->Door_Opening }}  </p>
+                                                    <a href="" class="btn" style="background-color: #F28123;">Add To Cart <i
+                                                            class="fas fa-angle-right"></i></a> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+            </div>
+            <div style="overflow:auto;">
+                <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+            </div>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
         </form>
         <script>
             var currentTab = 0; // Current tab is set to be the first tab (0)

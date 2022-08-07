@@ -33,8 +33,8 @@
 								<p class="subtitle">Furniture Map Will Help You </p>
 								<h1>Moving Home Services</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
+									<a href="/Shop" class="boxed-btn">Visit Shop</a>
+									<a href="/Contact" class="bordered-btn">Contact Us</a>
 								</div>
 							</div>
 						</div>
@@ -52,8 +52,8 @@
 								<p class="subtitle">Welcom In furniture MAP</p>
 								<h1>Need A Truck & Acessories For Moving ?  </h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
+									<a href="/Shop" class="boxed-btn">Visit Shop</a>
+									<a href="/Contact" class="bordered-btn">Contact Us</a>
 								</div>
 							</div>
 						</div>
@@ -158,7 +158,7 @@
 						<p class="top-sub">BEST MOVERS AROUND</p>
 						<h3>We are <span class="orange-text">Furniture MAP</span></h3>
 						<p>We are the leading movers and packers in Jordan, providing top-quality services at affordable prices. We are a family-owned and operated company, and we take pride in our reputation for excellence. We offer a wide range of services, including packing, moving, and storage, and we are dedicated to providing the highest level of customer service. Our team of experienced professionals will take care of everything for you, so you can relax and focus on your new home or office.</p>
-						<a href="about.html" class="boxed-btn mt-4">know more</a>
+						<a href="/About" class="boxed-btn mt-4">know more</a>
 					</div>
 				</div>
 			</div>
@@ -228,7 +228,7 @@
                                 </span>
                             </div>
                         </div>
-                    	<img src="assets/img/Moving-house-1.jpeg" alt=""   style="border-radius:5%;"
+                    	<img src="/img/Moving-house-1.jpeg" alt=""   style="border-radius:5%;"
 						>
                     </div>
                 </div>
