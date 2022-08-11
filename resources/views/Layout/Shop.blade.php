@@ -93,65 +93,7 @@
             <h1>Laravel 8 Step Form User Register:</h1>
             <!-- One "tab" for each step in the form: -->
             <div class="tab">
-
                 <a href="/Reservation"> Go to Reserve a Date</a>
-                {{-- <div class="col-md-12 col-md-7 ">
-                    <div class="booking-form">
-                        <form action="{{url('Reservation')}}">
-                            @csrf
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <span class="form-label">Pick Up Location</span>
-                                    <select class="form-control" name="PickupLocation">
-                                        <option value="Aqaba">Aqaba</option>
-                                        <option value="Ma'an">Ma'an</option>
-                                        <option value="Altafelah">Altafelah</option>
-                                        <option value="Alkarak">Alkarak</option>
-                                        <option value="Amman">Amman</option>
-                                        <option value="jarash">Jarash</option>
-                                        <option value="Alzarqaa">Alzarqaa</option>
-                                        <option value="Madaba">Madaba</option>
-                                        <option value="Alsalt">Alsalt</option>
-                                        <option value="Almafraq">Almafraq</option>
-                                        <option value="Irbid">Irbid</option>
-                                        <option value="Ajloun">Ajloun</option>
-                                    </select>
-                                    <span class="select-arrow"></span>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <span class="form-label">Drop-Off Location</span>
-                                    <select class="form-control" name="DropOffLocation">
-                                        <option value="Aqaba">Aqaba</option>
-                                        <option value="Ma'an">Ma'an</option>
-                                        <option value="Altafelah">Altafelah</option>
-                                        <option value="Alkarak">Alkarak</option>
-                                        <option value="Amman">Amman</option>
-                                        <option value="jarash">Jarash</option>
-                                        <option value="Alzarqaa">Alzarqaa</option>
-                                        <option value="Madaba">Madaba</option>
-                                        <option value="Alsalt">Alsalt</option>
-                                        <option value="Almafraq">Almafraq</option>
-                                        <option value="Irbid">Irbid</option>
-                                        <option value="Ajloun">Ajloun</option>
-                                    </select>
-                                    <span class="select-arrow"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <span class="form-label">
-                                        Start Time
-                                    </span>
-                                    <input type="datetime-local" class="form-control" name="StartTime">
-                                    <span class="select-arrow"></span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> --}}
             </div>
 
             <div class="tab">
@@ -165,7 +107,7 @@
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="single-latest-news">
                                                     <a href="">
-                                                        <input type="hidden" name="product_id" value="{{$data->product_id}}">
+                                                        <input type="hidden" name="product_id" value={{$data->product_id}}>
                                                         <div>
                                                             <img src={{ $data->productImg }} alt="product" name="productImg" class="latest-news-bg">
                                                         </div>
@@ -176,8 +118,8 @@
                                                             <span class="author" name="productPrice">   {{ $data->productPrice}} JD
                                                              </span>
                                                         </p>
-                                                        <a href="" class="btn" style="background-color: #F28123;">Add To Cart <i
-                                                                class="fas fa-angle-right"></i></a>
+                                                        {{-- <a href="" class="btn" style="background-color: #F28123;">Add To Cart <i
+                                                                class="fas fa-angle-right"></i></a> --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -240,15 +182,17 @@
                                         @foreach ($trucks as $trucks)
                                         <div class="col-lg-4 col-md-6">
                                             <div class="single-latest-news">
-                                                <a href="">
+                                                
                                                     <div>
+                                                        <a href={{url('SingleTruck/id/'.$trucks->Truck_id)}} name="Truck_id ">
                                                         <img src={{ $trucks->TruckImg }} alt="product"  class="latest-news-bg" name="TruckImg">
+                                                        </a>
                                                     </div>
-                                                </a>
+                                                
                                                 <div class="news-text-box">
                                                     <p class="blog-meta"><i class="fas fa-dollar-sign"></i>PRICE :<span class="author"></p>  
                                                     <p class="excerpt"><span  name="TruckDes"> {{ $trucks->TruckDes }}</span></p>
-                                                    <p class="excerpt" >Dimention :<span name="Dimention"> {{ $trucks->Dimention }}</span> </p>
+                                                    <p class="excerpt" >Dimention :<span name="Dimention"> {{ $trucks->Dimention_L_W_H }}</span> </p>
                                                     <p class="excerpt" >Deck_height  : <span name="Deck_height">{{ $trucks->Deck_height }} </span></p>
                                                     <p class="excerpt" name="Door_Opening">Door_Opening :{{ $trucks->Door_Opening }}  </p>
                                                     <a href="" class="btn" style="background-color: #F28123;">Add To Cart <i

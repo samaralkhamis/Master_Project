@@ -1,6 +1,5 @@
 @extends('layout.Master')
-@section('title, SingleProduct')
-
+@section('title, SingleTruck')
 @section('content')
 
 
@@ -11,41 +10,43 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
 						<p>See more Details</p>
-						<h1>Single Product</h1>
+						<h1>Single Truck</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end breadcrumb section -->
-@foreach ($SingleProduct as $SingleProduct )
+@foreach ($SingleTruck as $SingleTruck )
 	<!-- single product -->
 	<div class="single-product mt-150 mb-150">
-		<form action="{{url('/CreateCart')}}" method="post">
+		<form action={{url('/UpdateCart/id/'.$SingleTruck->Truck_id)}}>
+				@csrf
+				@method('PUT')
 		<div class="container">
 			<div class="row">
 				
 				<div class="col-md-5">
 					<div class="single-product-img">
-						@csrf
-						<input type="hidden" name="product_id" value={{$SingleProduct->product_id}}>
-						<input type="hidden" name="productImg" value={{$SingleProduct->productImg}}>
-						<img src={{$SingleProduct->productImg}} alt="">
+						
+						<input type="hidden" name="Truck_id " value={{$SingleTruck->Truck_id }}>
+						<input type="hidden" name="TruckImg" value={{$SingleTruck->TruckImg}}>
+						<img src={{$SingleTruck->TruckImg}} alt="">
 					</div>
 				</div>
 				<div class="col-md-7">
 					<div class="single-product-content">
-						<h3>{{$SingleProduct->productName}}</h3>
-						<input type="hidden" name="productName" value={{$SingleProduct->productName}}>
-						<p class="single-product-pricing">Price : {{$SingleProduct->productPrice}}</p>
-						<input type="hidden" name="productPrice" value={{$SingleProduct->productPrice}}>
-						<p>{{$SingleProduct->productDescription}}</p>
+						{{-- <h3>{{$SingleTruck->productName}}</h3>
+						<input type="hidden" name="productName" value={{$SingleTruck->productName}}> --}}
+						<p class="single-product-pricing">Price : {{$SingleTruck->Price}}</p>
+						<input type="hidden" name="Price" value={{$SingleTruck->Price}}>
+						<p>{{$SingleTruck->TruckDes}}</p>
 						<div class="single-product-form">
 
 								<input type="number" placeholder="1" name="Quantity" >
 						
 							<button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-							<p><strong>Categories: </strong>{{$SingleProduct->productCategory}}</p>
+							{{-- <p><strong>Categories: </strong>{{$SingleTruck->productCategory}}</p> --}}
 						</div>
 					</div>
 				</div>
