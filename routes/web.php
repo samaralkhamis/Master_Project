@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductCartController;
+use App\Http\Controllers\TruckCartController;
 use App\Http\Controllers\TruckController;
 
 
@@ -52,8 +53,10 @@ Route::post('/Reservation', [ReservationController::class, 'Reservation']);
 
 Route::get('/SingleProduct/id/{id}', [ProductController::Class,'singleProduct']); 
 Route::get('/SingleTruck/id/{id}', [TruckController::Class,'singleTruck']); 
-// Route::get('/CreateCart', [CartController::Class,'viewCart']);
-// Route::post('/CreateCart', [CartController::class, 'AddToCart']);
 
-// Route::post('/SingleTruck/id/{id}', [TruckController::class, 'AddTruckToCart']);
-// Route::PUT('/UpdateCart/id/{id}', [TruckController::class, 'updateCart']);
+Route::get('/CreateCart', [ProductCartController::Class,'viewCart']);
+Route::post('/CreateCart', [ProductCartController::class, 'AddToCart']);
+
+Route::get('/CreateTCart', [TruckCartController::Class,'viewTCart']);
+Route::post('/CreateTCart', [TruckCartController::class, 'AddToTruckCart']);
+

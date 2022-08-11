@@ -1,8 +1,7 @@
 @extends('layout.Master')
-@section('title, SingleTruck')
+@section('title, SingleProduct')
+
 @section('content')
-
-
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
@@ -10,7 +9,7 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
 						<p>See more Details</p>
-						<h1>Single Truck</h1>
+						<h1>Single Product</h1>
 					</div>
 				</div>
 			</div>
@@ -20,16 +19,14 @@
 @foreach ($SingleTruck as $SingleTruck )
 	<!-- single product -->
 	<div class="single-product mt-150 mb-150">
-		<form action={{url('/UpdateCart/id/'.$SingleTruck->Truck_id)}}>
-				@csrf
-				@method('PUT')
+		<form action="{{url('/CreateTCart')}}" method="post">
 		<div class="container">
 			<div class="row">
 				
 				<div class="col-md-5">
 					<div class="single-product-img">
-						
-						<input type="hidden" name="Truck_id " value={{$SingleTruck->Truck_id }}>
+						@csrf
+						<input type="hidden" name="Truck_id" value={{$SingleTruck->Truck_id}}>
 						<input type="hidden" name="TruckImg" value={{$SingleTruck->TruckImg}}>
 						<img src={{$SingleTruck->TruckImg}} alt="">
 					</div>
@@ -43,7 +40,7 @@
 						<p>{{$SingleTruck->TruckDes}}</p>
 						<div class="single-product-form">
 
-								<input type="number" placeholder="1" name="Quantity" >
+								<input type="number" placeholder="1" name="Quantity" value="1">
 						
 							<button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
 							{{-- <p><strong>Categories: </strong>{{$SingleTruck->productCategory}}</p> --}}
