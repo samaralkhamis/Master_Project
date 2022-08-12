@@ -65,3 +65,5 @@ Route::post('/CreateTCart', [TruckCartController::class, 'AddToTruckCart']);
 Route::get('/CreateLCart', [LaborController::Class,'viewLCart']);
 Route::post('/CreateLCart', [LaborController::class, 'AddToLaborCart']);
 
+Route::get('/Cart', [ProductCartController::Class,'ViewProduct']); 
+

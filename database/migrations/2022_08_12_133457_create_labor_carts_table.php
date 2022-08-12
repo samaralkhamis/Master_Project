@@ -16,7 +16,7 @@ class CreateLaborCartsTable extends Migration
         Schema::create('labor_carts', function (Blueprint $table) {
             $table->bigIncrements('LCart_id')->nullable();
             $table->integer('Labor_id')->nullable();
-            $table->integer('Order_id')->nullable();
+            $table->double('Price')->nullable();
             $table->string('LaborFName')->nullable();
             $table->timestamps();
         });
