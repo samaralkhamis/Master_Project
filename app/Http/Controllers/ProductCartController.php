@@ -15,7 +15,6 @@ class ProductCartController extends Controller
 
     public function AddToCart(Request $request){									
         $add=new Product_Cart();
-        // $add->user_id = Auth::user()->id;
         $add->product_id= $request->input('product_id');
         $add->Order_id= $request->input('Order_id');
         $add->Quantity= $request->input('Quantity');

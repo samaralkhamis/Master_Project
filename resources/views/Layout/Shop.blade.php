@@ -143,16 +143,11 @@
                                         @foreach ($labor as $labor)
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="single-latest-news">
-                                                    <a href="">
-                                                        <div>
-                                                            
-                                                        </div>
-                                                    </a>
                                                     <div class="news-text-box">
-                                                        <h3><a href="" name="LaborFName">{{ $labor->LaborFName }}-{{ $labor->LaborLName }} </a></h3>
-                                                        <p class="blog-meta"><i class="fas fa-dollar-sign"></i>PRICE :
+                                                        <h3><a href="/SingleLabor/id/{{$labor->Labor_id}}" name="LaborFName">{{ $labor->LaborFName }}-{{ $labor->LaborLName}} </a></h3>
+                                                        <p class="blog-meta"><i class="fas fa-dollar-sign"></i>Availabilty (status) :
                                                             <span class="author">   {{ $labor->Status }} JD
-                                                             </span>
+                                                            </span>
                                                         </p>
                                                         {{-- <p class="excerpt">{{ $labor->productDescription }}</p>
                                                         <p class="excerpt">Category : Product /{{ $labor->productCategory }}</p>
