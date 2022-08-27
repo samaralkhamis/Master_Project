@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Order;
 
 class HomeController extends Controller
 {
@@ -30,4 +31,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function ViewProfileData()
+    {              
+        $profile = Order::where('Email', Auth::user()->email)->get(); // To Show All Data From Order to specific user
+        return view('home', compact('profile')) ;
+    }
+
 }

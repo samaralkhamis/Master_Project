@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product_Cart;
+use App\Models\labor_cart;
+use App\Models\truck_cart;
 use Illuminate\Http\Request;
 
 class ProductCartController extends Controller
@@ -29,9 +31,19 @@ class ProductCartController extends Controller
 
         public function ViewProduct()
         {  
-            $ProductCart = DB::select('select * from product_carts'); // To Show All Product
-            $laborCart = DB::select('select * from labor_carts'); // To Show All Labors
-            $trucksCart = DB::select('select * from truck_carts'); // To Show All truks
+            $ProductCart = product_cart::where('isDeleted', '0')->get();// To Show All Products 
+            $laborCart = labor_cart::where('isDeleted', '0')->get();//To Show All Labors
+            $trucksCart = truck_cart::where('isDeleted', '0')->get();//To Show Alltruks
            return view('layout.Cart', compact('ProductCart', 'laborCart' , 'trucksCart'));
         }
+
+
+
+        public function DeletePro($id){
+            $Delete = DB::update('update product_carts set isDeleted = ? where Product_id = ?',[1,$id]);         
+            return redirect('/Cart')->with('Deletemessage','The data has been Deleted successfully');
+         }
+
+    
+
 }

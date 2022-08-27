@@ -10,7 +10,7 @@
        
 
         #regForm {
-            background-color: #b5b3b3;
+            /* background-color: #b5b3b3; */
             margin: 100px auto;
             font-family: Raleway;
             padding: 40px;
@@ -90,8 +90,6 @@
         <!-- end breadcrumb section -->
 
         <form id="regForm" action="">
-            <h1>Laravel 8 Step Form User Register:</h1>
-            <!-- One "tab" for each step in the form: -->
             <div class="tab">
                 <a href="/Reservation"> Go to Reserve a Date</a>
             </div>

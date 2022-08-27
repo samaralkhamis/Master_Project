@@ -35,19 +35,40 @@
 									<th class="product-price">Price</th>
 									<th class="product-quantity">Quantity</th>
 									<th class="product-total">Total</th>
+									<th class="product-total">Delete</th>
 								</tr>
 							</thead>
 							<tbody>
+								<?php 
+								$A = 0 ;
+								$B = 0 ;
+								$C = 0 ; 
+								?>
 								@foreach ($ProductCart as $ProductCart)
 								<tr class="table-body-row">
 									<td>{{ $ProductCart->Product_id }}</td>
 									<td class="product-image"><img src={{ $ProductCart->productImg }}></td>
 									<td class="product-name">{{ $ProductCart->productName }}</td>
 									<td class="product-price">{{ $ProductCart->productPrice }} JD</td>
-									<td class="product-quantity"> <input type="number" value={{ $ProductCart->Quantity }} ></td>
-									<td class="product-total">1</td>
+									<td > 
+									<input type="number" name="Quantity" value={{ $ProductCart->Quantity }}>
+									{{-- <a class="btn btn-increase" href="#" wire:click.prefetch="IncreaseQuantity({{ $ProductCart->Quantity }})">+</a> --}}
+									</td>
+									<td class="product-total">{{$ProductCart->productPrice * $ProductCart->Quantity}} JD </td>
+
+								
+									<td class="align-middle text-center text-sm">
+										<a href="{{url('DeletePro/id/'.$ProductCart->Product_id)}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete Product"><i class="fa fa-trash" style="color:red" aria-hidden="true"></i></a>
+									</td>
+									
+									<?php 
+									$A += ($ProductCart->productPrice * $ProductCart->Quantity) ;	
+									Session::put('$A', $A);
+									?>
+									
 								</tr>
 								@endforeach
+							
 							</tbody>
 						</table>
 					</div>
@@ -61,6 +82,7 @@
 									<th class="product-name">Product Name</th>
 									<th class="product-price">Price</th>
 									<th class="product-total">Total</th>
+									<th class="product-total">Delete</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -71,7 +93,10 @@
 									{{-- <td>{{ $laborCart->Labor_id }}</td> --}}
 									<td class="product-name">{{ $laborCart->LaborFName }}</td>
 									<td class="product-price">{{ $laborCart->Price }}</td>									
-									<td class="product-total">1</td>
+									<td class="product-total">{{ $laborCart->Price }}</td>
+									<td class="align-middle text-center text-sm">
+										<a href="{{url('DeleteLabor/id/'.$laborCart->Labor_id)}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete Product"><i class="fa fa-trash" style="color:red" aria-hidden="true"></i></a>
+									</td>
 								</tr>
 								@endforeach
 							</tbody>
@@ -89,6 +114,7 @@
 									<th class="product-price">Price</th>
 									<th class="product-quantity">Quantity</th>
 									<th class="product-total">Total</th>
+									<th class="product-total">Delete</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -97,10 +123,17 @@
 									<td>{{ $trucksCart->Truck_id }}</td>
 									<td class="product-image"><img src={{ $trucksCart->TruckImg }}></td>
 									{{-- <td class="product-name">{{ $trucksCart->productName }}</td> --}}
-									<td class="product-price">{{ $trucksCart->	Price }} JD</td>
-									<td class="product-quantity"> <input type="number" value={{ $trucksCart->Quantity }} ></td>
-									<td class="product-total">1</td>
+									<td class="product-price">{{ $trucksCart->Price }} JD</td>
+									<td> <input type="number" value={{ $trucksCart->Quantity }} ></td>
+									<td class="product-total">{{ $trucksCart->Price * $trucksCart->Quantity }} JD </td>
+									<td class="align-middle text-center text-sm">
+										<a href="{{url('DeleteTruck/id/'.$trucksCart->Truck_id)}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete Product"><i class="fa fa-trash" style="color:red" aria-hidden="true"></i></a>
+									</td>
 								</tr>
+								<?php
+								$B =+ ($trucksCart->Price * $trucksCart->Quantity) ;
+								Session::put('$B', $B);
+								?>
 								@endforeach
 							</tbody>
 						</table>
@@ -118,32 +151,23 @@
 							</thead>
 							<tbody>
 								<tr class="total-data">
-									<td><strong>Subtotal: </strong></td>
-									<td>$500</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Shipping: </strong></td>
-									<td>$45</td>
-								</tr>
-								<tr class="total-data">
 									<td><strong>Total: </strong></td>
-									<td>$545</td>
+									@if(isset($B) && isset($A))
+										<td>{{$A + $B}} JD </td>
+									@elseif (isset($A))
+										<td>{{ $A}} JD </td>
+									@else 
+										<td> 0 JD </td>
+									@endif
 								</tr>
+								
+								
+								
 							</tbody>
 						</table>
 						<div class="cart-buttons">
 							<a href="cart.html" class="boxed-btn">Update Cart</a>
-							<a href="checkout.html" class="boxed-btn black">Check Out</a>
-						</div>
-					</div>
-
-					<div class="coupon-section">
-						<h3>Apply Coupon</h3>
-						<div class="coupon-form-wrap">
-							<form action="index.html">
-								<p><input type="text" placeholder="Coupon"></p>
-								<p><input type="submit" value="Apply"></p>
-							</form>
+							<a href="/Checkout" class="boxed-btn black">Check Out</a>
 						</div>
 					</div>
 				</div>

@@ -28,4 +28,9 @@ class LaborController extends Controller
         $add->save();
         return redirect('/Shop')->with('message','The data has been add Product successfully');
     }
+
+    public function DeleteLabor($id){
+        $Delete = DB::update('update labor_carts set isDeleted = ? where Labor_id = ?',[1,$id]);         
+        return redirect('/Cart')->with('Delemessage','The data has been Deleted successfully');
+     }
 }
