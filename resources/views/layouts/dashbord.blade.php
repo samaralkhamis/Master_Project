@@ -20,8 +20,8 @@ background: #F28123;
               <i class="far fa-flag opacity-10"></i>
             </div>
             <div class="text-end pt-1">
-              <p class="text mb-0 text-capitalize mr-5">Contries Number</p>
-              <h4 class="mb-0 mt-2" style="margin-right:45%">10</h4>
+              <p class="text mb-0 text-capitalize mr-5">Orders Number</p>
+              <h4 class="mb-0 mt-2" style="margin-right:45%">{{$numbers[0]->orders}}</h4>
             </div>
           </div>
           <hr class="dark horizontal my-0">
@@ -36,8 +36,8 @@ background: #F28123;
               <i class="material-icons opacity-10">person</i>
             </div>
             <div class="text-end pt-1">
-              <p class="text mb-0 text-capitalize" style="text-align:center">New Users </p>
-              {{-- <h4 class="mb-0 mt-2" style="margin-right:50%">{{$numbers[0]->users_number}}</h4> --}}
+              <p class="text mb-0 text-capitalize" style="text-align:center">Users Numbers </p>
+              <h4 class="mb-0 mt-2" style="margin-right:50%">{{$numbers[0]->users}}</h4>
             </div>
           </div>
           <hr class="dark horizontal my-0">
@@ -51,8 +51,8 @@ background: #F28123;
               <i class="material-icons opacity-10">person</i>
             </div>
             <div class="text-end pt-1">
-              <p class="text mb-0 text-capitalize" style="text-align:center"> New Requests </p>
-              {{-- <h4 class="mb-0 mt-2" style="margin-right:50%">{{$numbers[0]->elders_number}}</h4> --}}
+              <p class="text mb-0 text-capitalize" style="text-align:center"> Feedback </p>
+              {{-- <h4 class="mb-0 mt-2" style="margin-right:50%">{{$numbers[0]->feedback}}</h4> --}}
             </div>
           </div>
           <hr class="dark horizontal my-0">

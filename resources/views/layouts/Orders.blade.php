@@ -3,10 +3,8 @@
 @section('content')
 
 
-<div class="container-fluid py-4">
-    <div class="row">
-        <a href="{{url('create')}}" class="card-link btn w-10 " style="background-color:#F28123 ; color:white; margin-left:85%">add</a>
-        </div>
+<div class="container-fluid py-4 mb-5">
+    
       <div class="col-12">
         <div class="card my-4">
           <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">

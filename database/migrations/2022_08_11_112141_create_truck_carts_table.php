@@ -20,6 +20,7 @@ class CreateTruckCartsTable extends Migration
             $table->integer('Quantity')->nullable();
             $table->string('TruckImg')->nullable();
             $table->float('Price')->nullable();
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

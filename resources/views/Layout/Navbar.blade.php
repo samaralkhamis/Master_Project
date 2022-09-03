@@ -54,11 +54,7 @@
 								</li>
 								<li><a href="/About">About Us</a></li>
 								<li><a href="/Contact">Contact Us</a></li>
-								<li><a href="news.html">News</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">News</a></li>
-										<li><a href="single-news.html">Single News</a></li>
-									</ul>
+								<li><a href="/Blog">Blog</a>
 								</li>
 								<li><a href="/Shop">Shop</a>
 									<ul class="sub-menu">

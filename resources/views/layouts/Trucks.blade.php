@@ -5,7 +5,7 @@
 
 <div class="container-fluid py-4">
     <div class="row">
-        <a href="{{url('create')}}" class="card-link btn w-10 " style="background-color:#F28123 ; color:white; margin-left:85%">add</a>
+        <a href="{{url('createTruck')}}" class="card-link btn w-10 " style="background-color:#F28123 ; color:white; margin-left:85%">add</a>
         </div>
       <div class="col-12">
         <div class="card my-4">
@@ -42,14 +42,14 @@
                       <img src="{{$Truck->TruckImg}}" width="165px" >
                     </td>
                     <td>
-                      <p class="align-middle text-center text-sm">{{$Truck->TruckName}} </p>
+                      {{-- <p class="align-middle text-center text-sm">{{$Truck->TruckName}} </p> --}}
                     </td>
                     
                     <td class="align-middle text-center text-sm">
                       <span class="badge badge-sm bg-gradient-success">{{$Truck->Price}}</span>
                     </td>                  
-                    <td class="align-middle text-center text-sm">
-                      <span>{{$Truck->TruckDes}} </span>
+                    <td  class="align-middle text-center text-sm" >
+                      <span width="30%">{{$Truck->TruckDes}} </span>
                     </td>  
                     <td class="align-middle text-center text-sm">
                       <span>{{$Truck->Dimention_L_W_H}} </span>
@@ -63,9 +63,9 @@
                     
                     
                     <td class="align-middle text-center text-sm">
-                      <a href="{{url('deleteUser/id/'.$Truck->Truck_id )}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete user"><i class="fa fa-trash" style="color:red ; font-size:25px" aria-hidden="true"></i></a>
+                      <a href="{{url('deleteTruck/id/'.$Truck->Truck_id )}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete user"><i class="fa fa-trash" style="color:red ; font-size:25px" aria-hidden="true"></i></a>
 
-                      <a href="{{url('editus/id/'.$Truck->Truck_id )}}"><i class="fas fa-edit" style="color:green ; font-size:25px"></i> 
+                      <a href="{{url('editTruck/id/'.$Truck->Truck_id )}}"><i class="fas fa-edit" style="color:green ; font-size:25px"></i> 
                       </a>
 
                     </td>

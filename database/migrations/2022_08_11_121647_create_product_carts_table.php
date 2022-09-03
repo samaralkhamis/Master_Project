@@ -21,6 +21,7 @@ class CreateProductCartsTable extends Migration
             $table->string('productName')->nullable();
             $table->float('productPrice')->nullable();
             $table->string('productImg')->nullable();
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

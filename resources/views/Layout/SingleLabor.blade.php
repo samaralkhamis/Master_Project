@@ -41,8 +41,8 @@
 						<p class="single-product-pricing">Price : {{$SingleLabor->Price}}</p>
 						<input type="hidden" name="Price" value={{$SingleLabor->Price}}>
 
-						<p class="single-product-pricing">Status : {{$SingleLabor->Status}}</p>
-						<input type="hidden" name="Status" value={{$SingleLabor->Status}}>
+						{{-- <p class="single-product-pricing">Status : {{$SingleLabor->Status}}</p>
+						<input type="hidden" name="Status" value={{$SingleLabor->Status}}> --}}
 						{{-- <p>{{$SingleLabor->TruckDes}}</p> --}}
 						<div class="single-product-form">
 

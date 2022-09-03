@@ -45,13 +45,12 @@
                                         </a>
                                         <div class="media">
                                             <a href="#">
-                                                {{-- <img class="mr-4" src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                                                alt="Generic placeholder image"> --}}
+                                                
                                             </a>
                                             <div class="media-body">
                                                 <a href="#">
                                                     <strong class="float-right" style="color:#F28123">Delivered on
-                                                        {{ $profile->created_at->addDays(7) }}<i
+                                                        {{ $profile->created_at->addDays(1) }}<i
                                                             class="icofont-check-circled text-success"></i></strong>
                                                 </a>
                                                 <h6 class="mb-2">
@@ -98,23 +97,5 @@
         </div>
     </div>
 
-    {{-- <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        {{ __('You are logged in!') }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+   
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLaborsTable extends Migration
+class CreateTableNumbersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateLaborsTable extends Migration
      */
     public function up()
     {
-        Schema::create('labors', function (Blueprint $table) {
-            $table->bigIncrements('Labor_id');
-            $table->string('LaborFName');
-            $table->string('LaborLName');
-            $table->float('Price');
-            $table->integer('isDeleted')->default('0');
-
+        Schema::create('table_numbers', function (Blueprint $table) {
+            $table->id();
+            $table->integer('orders');
+            $table->integer('users');
+            $table->integer('feedback');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateLaborsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('labors');
+        Schema::dropIfExists('table_numbers');
     }
 }

@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title','Trucks')
+@section('title','Labor')
 @section('content')
 
 
 <div class="container-fluid py-4">
     <div class="row">
-        <a href="{{url('create')}}" class="card-link btn w-10 " style="background-color:#F28123 ; color:white; margin-left:85%">add</a>
+        <a href="{{url('createLabor')}}" class="card-link btn w-10 " style="background-color:#F28123 ; color:white; margin-left:85%">add</a>
         </div>
       <div class="col-12">
         <div class="card my-4">
@@ -23,7 +23,6 @@
                     <th class="align-middle text-center text-sm">Labor First Name</th> 
                     <th class="align-middle text-center text-sm">Labor Last Name</th>                    
                     <th class="align-middle text-center text-sm">Price</th>
-                    <th class="align-middle text-center text-sm">Status</th>
                     <th class="align-middle text-center text-sm">Time Availabity</th>
                     <th class="align-middle text-center text-sm">Action</th>
                   </tr>
@@ -46,16 +45,13 @@
                     <td class="align-middle text-center text-sm">
                       <span class="badge badge-sm bg-gradient-success">{{$Labor->Price}}</span>
                     </td>                  
-                      
+                    
                     <td class="align-middle text-center text-sm">
-                      <span>{{$Labor->Status}} </span>
-                    </td>  
-                    <td class="align-middle text-center text-sm">
-                      <span>{{$Labor->created_at}} </span>
+                      {{-- <span>{{$Labor->created_at}} </span> --}}
                     </td>                     
                     
                     <td class="align-middle text-center text-sm">
-                      <a href="{{url('deleteUser/id/'.$Labor->Labor_id )}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete user"><i class="fa fa-trash" style="color:red ; font-size:25px" aria-hidden="true"></i></a>
+                      <a href="{{url('deleteLabor/id/'.$Labor->Labor_id )}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete user"><i class="fa fa-trash" style="color:red ; font-size:25px" aria-hidden="true"></i></a>
 
                       <a href="{{url('editus/id/'.$Labor->Labor_id )}}"><i class="fas fa-edit" style="color:green ; font-size:25px"></i> 
                       </a>

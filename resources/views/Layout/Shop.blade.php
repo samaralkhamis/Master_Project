@@ -93,7 +93,7 @@
             <div class="tab">
                 <a href="/Reservation"> Go to Reserve a Date</a>
             </div>
-
+            
             <div class="tab">
                 <section class="section-style">
                     <div class="board-wrapper">
@@ -144,7 +144,7 @@
                                                     <div class="news-text-box">
                                                         <h3><a href="/SingleLabor/id/{{$labor->Labor_id}}" name="LaborFName">{{ $labor->LaborFName }}-{{ $labor->LaborLName}} </a></h3>
                                                         <p class="blog-meta"><i class="fas fa-dollar-sign"></i>Availabilty (status) :
-                                                            <span class="author">   {{ $labor->Status }} JD
+                                                            {{-- <span class="author">   {{ $labor->Status }} JD --}}
                                                             </span>
                                                         </p>
                                                         {{-- <p class="excerpt">{{ $labor->productDescription }}</p>
@@ -175,7 +175,6 @@
                                         @foreach ($trucks as $trucks)
                                         <div class="col-lg-4 col-md-6">
                                             <div class="single-latest-news">
-                                                
                                                     <div>
                                                         <a href={{url('SingleTruck/id/'.$trucks->Truck_id)}} name="Truck_id ">
                                                         <img src={{ $trucks->TruckImg }} alt="product"  class="latest-news-bg" name="TruckImg">

@@ -1,0 +1,15 @@
+    .card-header:first-child {
+            color: white;
+            background:linear-gradient(195deg, #F28123 0%, #F28123 100%);;
+        
+    }
+    button.btn.btn-primary {
+    color: #fff;
+    border-color:linear-gradient(195deg, #F28123 0%, #F28123 100%);;
+    background:linear-gradient(195deg, #F28123 0%, #F28123 100%);;
+        
+    }
+    
+    div.card{
+        color:linear-gradient(195deg, #F28123 0%, #F28123 100%);;
+    }

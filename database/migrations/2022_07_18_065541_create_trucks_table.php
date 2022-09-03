@@ -18,10 +18,11 @@ class CreateTrucksTable extends Migration
             $table->bigIncrements('Truck_id');
             $table->string('TruckImg');
             $table->string('TruckDes');
-            $table->float('Dimention_L*W*H');
-            $table->float('Deck_height');
-            $table->float('Door_Opening');
+            $table->string('Dimention_L_W_H');
+            $table->string('Deck_height');
+            $table->string('Door_Opening');
             $table->float('Price');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

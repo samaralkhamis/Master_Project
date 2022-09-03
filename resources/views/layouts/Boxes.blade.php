@@ -5,7 +5,7 @@
 
 <div class="container-fluid py-4">
     <div class="row">
-        <a href="{{url('create')}}" class="card-link btn w-10 " style="background-color:#F28123 ; color:white; margin-left:85%">add</a>
+        <a href="{{url('createBox')}}" class="card-link btn w-10 " style="background-color:#F28123 ; color:white; margin-left:85%">add</a>
         </div>
       <div class="col-12">
         <div class="card my-4">
@@ -55,9 +55,9 @@
                     
                     
                     <td class="align-middle text-center text-sm">
-                      <a href="{{url('deleteUser/id/'.$product->product_id )}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete user"><i class="fa fa-trash" style="color:red ; font-size:25px" aria-hidden="true"></i></a>
+                      <a href="{{url('deleteBox/id/'.$product->product_id )}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete user"><i class="fa fa-trash" style="color:red ; font-size:25px" aria-hidden="true"></i></a>
 
-                      <a href="{{url('editus/id/'.$product->product_id )}}"><i class="fas fa-edit" style="color:green ; font-size:25px"></i> 
+                      <a href="{{url('editBox/id/'.$product->product_id )}}"><i class="fas fa-edit" style="color:green ; font-size:25px"></i> 
                       </a>
 
                     </td>

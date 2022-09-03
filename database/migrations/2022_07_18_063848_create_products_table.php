@@ -22,6 +22,8 @@ class CreateProductsTable extends Migration
             $table->string('productDescription');
             $table->string('productImg');
             $table->string('productCategory');
+            $table->integer('isDeleted')->default('0');
+
             $table->timestamps();
             
         });

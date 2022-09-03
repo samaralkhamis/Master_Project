@@ -18,6 +18,8 @@ class CreateLaborCartsTable extends Migration
             $table->integer('Labor_id')->nullable();
             $table->double('Price')->nullable();
             $table->string('LaborFName')->nullable();
+            $table->integer('isDeleted')->default('0');
+
             $table->timestamps();
         });
     }
