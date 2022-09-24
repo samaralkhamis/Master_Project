@@ -28,7 +28,7 @@ class OrderController extends Controller
 
         public function InsertOrder(Request $request){
          $create=new Order();
-         $create->Name=$request->input('Name');
+         $create->name=$request->input('name');
          $create->Phone=$request->input('Phone');
          $create->Email=$request->input('Email');
          $create->Address=$request->input('Address');
@@ -40,7 +40,10 @@ class OrderController extends Controller
          $create->TruckPrice=$request->input('TruckPrice');
          $create->Total=$request->input('Total');
          $create->save();
-         return redirect('/')->with('messageplaceorder','Thank You , Your Order Has Been Sent');
+         DB::update('update product_carts set isDeleted = 1');
+         DB::update('update truck_carts set isDeleted = 1');
+         DB::update('update labor_carts set isDeleted = 1');
+         return redirect('/bill')->with('messageplaceorder','Thank You , Your Order Has Been Sent');
          }
 
 }

@@ -79,6 +79,9 @@
 	<script src="{{ asset('/js/sticker.js') }}"></script>
 	<!-- main js -->
 	<script src="{{ asset('/js/main.js') }}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="{{ asset('/js/jquery.shuffle.min.js') }}"></script>
+    <script src="{{ asset('/js/script.js') }}"></script>
 
 </body>
 </html>

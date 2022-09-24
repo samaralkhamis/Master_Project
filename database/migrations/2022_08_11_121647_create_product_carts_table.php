@@ -17,7 +17,7 @@ class CreateProductCartsTable extends Migration
             $table->bigIncrements('PCart_id')->nullable();
             $table->integer('Product_id')->nullable();
             $table->integer('Order_id')->nullable();
-            $table->integer('Quantity')->nullable();
+            $table->integer('Quantity')->default('1');
             $table->string('productName')->nullable();
             $table->float('productPrice')->nullable();
             $table->string('productImg')->nullable();

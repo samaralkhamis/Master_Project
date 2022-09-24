@@ -7,10 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
 {
-    public function viewReservation()
-   {
-      return view('layout.Reservation');
-   }
 
    public function Reservation(Request $request){
     $create=new Reservation();

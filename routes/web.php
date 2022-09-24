@@ -10,7 +10,9 @@ use App\Http\Controllers\TruckController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\BlogCommentsController;
+use App\Http\Controllers\BlogCommentsController; 
+use App\Http\Controllers\BlogRepliesController; 
+use App\Http\Controllers\bill; 
 use App\Http\Controllers\AdminController;
 
 
@@ -37,27 +39,21 @@ Route::get('/About', function () {
     return view('layout.About');
 });
 
-// Route::get('/Cart', function () {
-//     return view('layout.Cart');
-// });
-
-
-Route::get('/Shop', function () {
-    return view('layout.Shop');
-});
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'profile'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
+Route::get('/home', [HomeController::class, 'profile'])->name('home');
+
 Route::get('/Shop', [ProductController::Class,'ViewProduct']); 
+Route::get('/ShopLabor', [LaborController::Class,'Labor']); 
+Route::get('/ShopTruck', [TruckController::Class,'Truck']); 
 Route::get('/Checkout', [OrderController::Class,'ViewCheckout'])->middleware('auth'); 
 
 Route::get('/Blog',[BlogController::class,'index'])->name('Blog');
 Route::get('/Blog-comments',[BlogCommentsController::class,'store'])->name('BlogComments.store');
-Route::get('/replies',[JobsRepliesController::class,'store']);
+Route::get('/replies',[BlogRepliesController::class,'store']);
 
-Route::get('/Reservation', [ReservationController::Class,'viewReservation']);
-Route::post('/Reservation', [ReservationController::class, 'Reservation']);
+Route::post('/', [ReservationController::class, 'Reservation']);
 
 Route::get('/SingleProduct/id/{id}', [ProductController::Class,'singleProduct']); 
 Route::get('/SingleTruck/id/{id}', [TruckController::Class,'singleTruck']); 
@@ -82,6 +78,7 @@ Route::get('/DeleteLabor/id/{id}', [LaborController::class, 'DeleteLabor']);
 
 Route::get('/home', [HomeController::Class,'ViewProfileData']); 
 
+Route::get('/bill',[bill::class,'ViewBill']);
 
 
 ################################# ADMIN DASBOARD ##################################

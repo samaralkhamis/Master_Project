@@ -73,8 +73,7 @@
                                                         <a style="cursor: pointer;" cid="{{ $comment->id }}"
                                                             name_a="{{ Auth::user()->name }} " token="{{ csrf_token() }}"
                                                             class="reply">Reply</a>&nbsp;
-                                                        <div class="reply-form">
-                                                        </div>
+                          
 
                                                         @foreach ($replies as $rep)
                                                             @if ($comment->id === $rep->comment_id)
@@ -86,14 +85,8 @@
                                                                             rid="{{ $comment->id }}"
                                                                             style="cursor: pointer;" class="reply-to-reply"
                                                                             token="{{ csrf_token() }}">Reply</a>&nbsp;
-                                                                        <a did="{{ $rep->id }}" class="delete-reply"
-                                                                            token="{{ csrf_token() }}">Delete</a>
                                                                     </div>
-                                                                    <div class="reply-to-reply-form">
-
-                                                                        <!-- Dynamic Reply form -->
-
-                                                                    </div>
+                                                                    
 
                                                                 </div>
                                                             @endif

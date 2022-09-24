@@ -56,13 +56,7 @@
 								<li><a href="/Contact">Contact Us</a></li>
 								<li><a href="/Blog">Blog</a>
 								</li>
-								<li><a href="/Shop">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="/Shop">Shop</a></li>
-										<li><a href="/Checkout">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-									</ul>
-								</li>
+								<li><a href="/Shop">Shop</a></li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="/Cart"><i class="fas fa-shopping-cart" style="font-size:20px"></i></a>

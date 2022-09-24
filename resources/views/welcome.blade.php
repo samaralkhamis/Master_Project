@@ -64,8 +64,87 @@
 	</div>
 	<!-- end home page slider -->
 
+	<!-- start reserveing date -->
+	<div id="booking" class="section mt-2">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">	
+						<h3 id="reserve_data">Reserve Date To Start Moving <h3>
+						<form action=""method="post">
+							@csrf
+							<div class="row no-margin">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label"><strong>Pick Up Location</strong></span>
+										<select class="form-control" name="PickupLocation" required>
+											<option value="Aqaba">Aqaba</option>
+											<option value="Ma'an">Ma'an</option>
+											<option value="Altafelah">Altafelah</option>
+											<option value="Alkarak">Alkarak</option>
+											<option value="Amman">Amman</option>
+											<option value="jarash">Jarash</option>
+											<option value="Alzarqaa">Alzarqaa</option>
+											<option value="Madaba">Madaba</option>
+											<option value="Alsalt">Alsalt</option>
+											<option value="Almafraq">Almafraq</option>
+											<option value="Irbid">Irbid</option>
+											<option value="Ajloun">Ajloun</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="row no-margin">
+										<div class="col-md-7">
+											<div class="form-group">
+												<span class="form-label"><strong>Drop-Off Location</strong></span>
+												<select class="form-control" name="DropOffLocation" required>
+													<option value="Aqaba">Aqaba</option>
+													<option value="Ma'an">Ma'an</option>
+													<option value="Altafelah">Altafelah</option>
+													<option value="Alkarak">Alkarak</option>
+													<option value="Amman">Amman</option>
+													<option value="jarash">Jarash</option>
+													<option value="Alzarqaa">Alzarqaa</option>
+													<option value="Madaba">Madaba</option>
+													<option value="Alsalt">Alsalt</option>
+													<option value="Almafraq">Almafraq</option>
+													<option value="Irbid">Irbid</option>
+													<option value="Ajloun">Ajloun</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div class="form-group">
+												<span class="form-label"><strong>Check Out</strong></span>
+												<input type="datetime-local" class="form-control" name="StartTime" required>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div >
+										<button class="btn btn-primary orange" >Check availability</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end reserving date -->
+
+
+
+
+
 	<!-- features list section -->
-	<div class="list-section pt-80 pb-80">
+	<div class="list-section pt-80 pb-80 mt-5">
 		<div class="container">
 
 			<div class="row">
@@ -166,56 +245,9 @@
 	</div>
 	<!-- end advertisement section -->
 	
-	<!-- product section
-	<div class="product-section mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Our</span> Products</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
-						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!-- end product section -->
 
 	<!-- cart banner section -->
-	<section class="cart-banner pt-100 pb-100">
+	<section class="cart-banner pt-80 pb-100">
     	<div class="container">
         	<div class="row clearfix">
             	<!--Image Column-->
@@ -238,7 +270,7 @@
                     <h4>Master Bedroom Packaging</h4>
                     <div class="text">The Bedroom Master Packaging is our largest moving ideal for homes with Master bedroom . This kit includes all the supplies necessary to pack, organize, protect, and cushion all of the items in your home. The quantities of each item in the kit can be adjusted to best fit your moving and packing needs.</div>
                     <!--Countdown Timer-->
-                    <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2022/8/30"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
+                    <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2022/10/5"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
                 	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>

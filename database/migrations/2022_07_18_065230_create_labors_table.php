@@ -19,7 +19,6 @@ class CreateLaborsTable extends Migration
             $table->string('LaborLName');
             $table->float('Price');
             $table->integer('isDeleted')->default('0');
-
             $table->timestamps();
         });
     }

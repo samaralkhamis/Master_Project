@@ -1,5 +1,4 @@
 @extends('layout.Master')
-
 @section('content')
     <div
         style="background-size: cover; background-position: center center; position: relative; z-index: 1; background-attachment: fixed; padding-top: 200px;">

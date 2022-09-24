@@ -44,23 +44,23 @@
                                                 @csrf
                                                 <div class="form-group">
                                                 <label>&nbsp; Name</label>
-                                                <p><input type="text" placeholder="Name" name="Name" value={{ Auth::user()->name }}>
+                                                <p><input type="text" placeholder="name" name="name" value={{ Auth::user()->name }} required>
                                                 </p></div>
 
                                                 <div class="form-group">
                                                     <label>&nbsp; Email</label>
                                                 <p><input type="email" name="Email"
-                                                        value={{ Auth::user()->email }}></p>
+                                                        value={{ Auth::user()->email }} required></p>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label>&nbsp; Address</label>
-                                                <p><input type="text" name="Address"></p>
+                                                <p><input type="text" name="Address" required></p>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label> &nbsp;Phone</label>
-                                                <p><input type="tel" name="Phone" ></p>
+                                                <p><input type="tel" name="Phone" required ></p>
                                                 </div>
 
                                                 <p>
@@ -137,7 +137,7 @@
                             <tbody class="checkout-details">
                                 <tr>
                                     <td>Total</td>
-                                    <td>{{Session::get('$A') + Session::get('$B')  }}</td><input type="hidden" name="Total" value={{Session::get('$A') + Session::get('$B')  }}>
+                                    <td>{{Session::get('$A') + Session::get('$B') + Session::get('$C')  }}</td><input type="hidden" name="Total" value={{Session::get('$A') + Session::get('$B') + Session::get('$C')  }}>
                                 </tr>
                             
                             </tbody>

@@ -17,7 +17,7 @@ class CreateTruckCartsTable extends Migration
             $table->bigIncrements('TCart_id')->nullable();
             $table->integer('Truck_id')->nullable();
             $table->integer('Order_id')->nullable();
-            $table->integer('Quantity')->nullable();
+            $table->integer('Quantity')->default('1');
             $table->string('TruckImg')->nullable();
             $table->float('Price')->nullable();
             $table->integer('isDeleted')->default('0');

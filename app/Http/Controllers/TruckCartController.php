@@ -22,7 +22,7 @@ class TruckCartController extends Controller
         $add->TruckImg= $request->input('TruckImg');
         $add->Price= $request->input('Price');
         $add->save();
-        return redirect('/Shop')->with('message','The data has been add Product successfully');
+        return redirect('/ShopTruck')->with('message','The data has been add Product successfully');
 
     }
 

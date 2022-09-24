@@ -17,6 +17,7 @@ class CreateTrucksTable extends Migration
         Schema::create('trucks', function (Blueprint $table) {
             $table->bigIncrements('Truck_id');
             $table->string('TruckImg');
+            $table->string('Truck_Title');
             $table->string('TruckDes');
             $table->string('Dimention_L_W_H');
             $table->string('Deck_height');

@@ -40,9 +40,9 @@
 							</thead>
 							<tbody>
 								<?php 
-								$A = 0 ;
-								$B = 0 ;
-								$C = 0 ; 
+								// $A = 0 ;
+								// $B = 0 ;
+								// $C = 0 ; 
 								?>
 								@foreach ($ProductCart as $ProductCart)
 								<tr class="table-body-row">
@@ -62,6 +62,7 @@
 									</td>
 									
 									<?php 
+									$A =0;
 									$A += ($ProductCart->productPrice * $ProductCart->Quantity) ;	
 									Session::put('$A', $A);
 									?>
@@ -92,12 +93,16 @@
 									<td> Package </td>
 									{{-- <td>{{ $laborCart->Labor_id }}</td> --}}
 									<td class="product-name">{{ $laborCart->LaborFName }}</td>
-									<td class="product-price">{{ $laborCart->Price }}</td>									
-									<td class="product-total">{{ $laborCart->Price }}</td>
+									<td class="product-price">{{ $laborCart->Price }} JD</td>									
+									<td class="product-total">{{ $laborCart->Price }} JD</td>
 									<td class="align-middle text-center text-sm">
 										<a href="{{url('DeleteLabor/id/'.$laborCart->Labor_id)}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete Product"><i class="fa fa-trash" style="color:red" aria-hidden="true"></i></a>
 									</td>
 								</tr>
+								<?php
+								$C =+ ($laborCart->Price) ;
+								Session::put('$C', $C);
+								?>
 								@endforeach
 							</tbody>
 						</table>
@@ -152,10 +157,20 @@
 							<tbody>
 								<tr class="total-data">
 									<td><strong>Total: </strong></td>
-									@if(isset($B) && isset($A))
+									@if(isset($B) && isset($A) && isset($C))
+										<td>{{$A + $B + $C}} JD </td>
+									@elseif(isset($B) && isset($A))
 										<td>{{$A + $B}} JD </td>
+									@elseif(isset($B) && isset($C))
+										<td>{{$B + $C}} JD </td>
+									@elseif(isset($A) && isset($C))
+										<td>{{$A + $C}} JD </td>
 									@elseif (isset($A))
 										<td>{{ $A}} JD </td>
+									@elseif (isset($B))
+										<td>{{ $B}} JD </td>
+									@elseif (isset($C))
+										<td>{{ $C}} JD </td>
 									@else 
 										<td> 0 JD </td>
 									@endif

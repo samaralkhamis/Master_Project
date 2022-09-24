@@ -18,15 +18,19 @@ class LaborController extends Controller
         return view('layout.CreateLCart');
     }
 
+    public function Labor(){
+        $labor = DB::select('select * from labors'); // To Show All Labors
+        return view('layout.ShopL', compact('labor'));
+    }
+
     public function AddToLaborCart(Request $request)
     {									
         $add=new labor_cart();
         $add->Labor_id= $request->input('Labor_id');
         $add->LaborFName= $request->input('LaborFName');
-        $add->Status= $request->input('Status');
-        // $add->Price= $request->input('Price');
+        $add->Price= $request->input('Price');
         $add->save();
-        return redirect('/Shop')->with('message','The data has been add Product successfully');
+        return redirect('/ShopLabor')->with('message','The data has been add Product successfully');
     }
 
     public function DeleteLabor($id){
