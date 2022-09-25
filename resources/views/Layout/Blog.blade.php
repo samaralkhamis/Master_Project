@@ -77,7 +77,7 @@
 
                                                         @foreach ($replies as $rep)
                                                             @if ($comment->id === $rep->comment_id)
-                                                                <div class="well">
+                                                                <div class="well" style="margin-bottom:20px; margin-top:20px;">
                                                                     <i><b> {{ $rep->name }}</b></i>&nbsp;&nbsp;
                                                                     <span> {{ $rep->reply }} </span>
                                                                     <div style="margin-left:10px;">

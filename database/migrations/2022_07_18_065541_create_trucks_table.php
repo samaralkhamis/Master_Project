@@ -16,13 +16,13 @@ class CreateTrucksTable extends Migration
 
         Schema::create('trucks', function (Blueprint $table) {
             $table->bigIncrements('Truck_id');
-            $table->string('TruckImg');
-            $table->string('Truck_Title');
-            $table->string('TruckDes');
-            $table->string('Dimention_L_W_H');
-            $table->string('Deck_height');
-            $table->string('Door_Opening');
-            $table->float('Price');
+            $table->string('TruckImg')->nullable();
+            $table->string('Truck_Title')->nullable();
+            $table->string('TruckDes')->nullable();
+            $table->string('Dimention_L_W_H')->nullable();
+            $table->string('Deck_height')->nullable();
+            $table->string('Door_Opening')->nullable();
+            $table->float('Price')->nullable();
             $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });

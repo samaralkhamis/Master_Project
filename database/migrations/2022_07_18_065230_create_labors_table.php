@@ -15,9 +15,9 @@ class CreateLaborsTable extends Migration
     {
         Schema::create('labors', function (Blueprint $table) {
             $table->bigIncrements('Labor_id');
-            $table->string('LaborFName');
-            $table->string('LaborLName');
-            $table->float('Price');
+            $table->string('LaborFName')->nullable();
+            $table->string('LaborLName')->nullable();
+            $table->float('Price')->nullable();
             $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });

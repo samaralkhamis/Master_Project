@@ -27,7 +27,7 @@ class ProductCartController extends Controller
         $add->productPrice = $request->input('productPrice');
         $add->productImg = $request->input('productImg');
         $add->save();
-        return redirect('/Shop')->with('message', 'The data has been add Product successfully');
+        return redirect('/Shop')->with('productmessage', 'The Product has been added successfully to the cart');
 
     }
 
@@ -42,14 +42,14 @@ class ProductCartController extends Controller
     public function DeletePro($id)
     {
         $Delete = DB::update('update product_carts set isDeleted = ? where Product_id = ?', [1, $id]);
-        return redirect('/Cart')->with('Deletemessage', 'The data has been Deleted successfully');
+        return redirect('/Cart')->with('Deletemessage', 'The product has been Deleted successfully');
     }
 
     public function updateCart(Request $request, $id)
     {
         $productQuantity = $request->input('Quantity');
         DB::update('update product_carts set Quantity = ? where PCart_id  = ?', [$productQuantity, $id]);
-        return redirect('/Cart')->with('message', 'The Quantity has been updated successfully');
+        return redirect('/Cart')->with('updatemessage', 'The Quantity of product has been updated successfully');
 
     }
 

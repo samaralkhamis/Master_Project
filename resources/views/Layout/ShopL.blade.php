@@ -72,7 +72,11 @@
             </div>
         </div>
         <!-- end breadcrumb section -->
-
+        @if (session()->has('Teammessage'))
+            <div class="container mt-5 alert alert-success text-left ">
+                {{ session()->get('Teammessage') }}
+            </div>
+        @endif
         <ol class="ol-cards alternate" style="margin-left: 12%;">
 
             <li style="--ol-cards-color-accent:#f68121">

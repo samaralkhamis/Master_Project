@@ -14,7 +14,7 @@ class ReservationController extends Controller
     $create->DropOffLocation=$request->input('DropOffLocation');
     $create->StartTime=$request->input('StartTime');
     $create->save();
-    return redirect('/Shop')->with('messageRej','The data has been add user successfully');
+    return redirect('/Shop')->with('messageRej','Resrvation a date have been added successfully. Now you can start Moving with product');
     }
 
 }

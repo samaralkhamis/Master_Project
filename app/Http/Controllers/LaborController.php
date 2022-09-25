@@ -31,11 +31,11 @@ class LaborController extends Controller
         $add->LaborLName= $request->input('LaborLName');
         $add->Price= $request->input('Price');
         $add->save();
-        return redirect('/ShopLabor')->with('message','The data has been add Product successfully');
+        return redirect('/ShopLabor')->with('Teammessage','The Team has been added successfully');
     }
 
     public function DeleteLabor($id){
         $Delete = DB::update('update labor_carts set isDeleted = ? where Labor_id = ?',[1,$id]);         
-        return redirect('/Cart')->with('Delemessage','The data has been Deleted successfully');
+        return redirect('/Cart')->with('Deletemessage','The data has been Deleted successfully');
      }
 }

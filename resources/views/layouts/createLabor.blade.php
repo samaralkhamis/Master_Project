@@ -18,13 +18,13 @@
                             <form action="{{ url('createLabor') }}"method="post">
                                 @csrf
                                 <div class="row mb-3 ml-5">
-                                        <label for="name" class="form-label">Laborer First Name</label>
+                                        <label for="name" class="form-label">Team Name</label>
                                         <input type="text" class="col-8" name="LaborFName" required
                                             autofocus>
                                 </div>
 
                                 <div class="row mb-3 ml-5">
-                                        <label for="name" class="form-label">Laborer Last Name</label>
+                                        <label for="name" class="form-label">Team Description</label>
                                         <input type="text" class="col-8" name="LaborLName"  required
                                             autofocus>
                                 </div>

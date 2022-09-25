@@ -16,9 +16,9 @@ class CreateBlogRepliesTable extends Migration
         Schema::create('Blog_replies', function (Blueprint $table) {
             $table->id();
             $table->integer('comment_id');
-            $table->integer('user_id');
-            $table->string('name');
-            $table->string('reply');
+            $table->integer('user_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('reply')->nullable();
             $table->integer('is_deleted')->default('0');
             $table->timestamps();
         });

@@ -17,15 +17,10 @@
 
                             <form action="{{ url('createTruck') }}"method="post">
                                 @csrf
-                                {{-- <div class="row mb-3 ml-5">
-                                    <label for="name" class="form-label">Truck Name</label>
-                                    <input type="text" class="col-8" name="productName" required autofocus>
-
-                                </div> --}}
 
                                 <div class="row mb-3 ml-5 ">
                                     <label class="form-label">Image</label>
-                                    <input type="file" class="col-8" name="TruckImg" placeholder="Image">
+                                    <input type="file" class="col-8" name="TruckImg" placeholder="Image" required>
                                 </div>
 
                                 <div class="row mb-3 ml-5">

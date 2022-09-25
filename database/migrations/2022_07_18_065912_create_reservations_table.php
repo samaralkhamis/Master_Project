@@ -15,8 +15,8 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->bigIncrements('Res_id');
-            $table->string('PickupLocation');
-            $table->string('DropOffLocation');
+            $table->string('PickupLocation')->nullable();
+            $table->string('DropOffLocation')->nullable();
             $table->dateTime('StartTime')->nullable();
             $table->timestamps();
         });

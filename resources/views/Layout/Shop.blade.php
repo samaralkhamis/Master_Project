@@ -60,7 +60,16 @@
             </div>
         </div>
         <!-- end breadcrumb section -->
-
+        @if (session()->has('messageRej'))
+            <div class="container mt-5 alert alert-success text-left ">
+                {{ session()->get('messageRej') }}
+            </div>
+        @endif
+        @if (session()->has('productmessage'))
+            <div class="container mt-5 alert alert-success text-left ">
+                {{ session()->get('productmessage') }}
+            </div>
+        @endif
         <ol class="ol-cards alternate" style="margin-left: 12%;">
             <li style="--ol-cards-color-accent:#f68121">
                 <div class="step"><i class="fab fa-codepen"></i></div>

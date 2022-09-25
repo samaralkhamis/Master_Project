@@ -49,16 +49,14 @@ class AdminController extends Controller
         $productCategory = $request->input('productCategory');
         $productPrice = $request->input('productPrice');
         $productDescription = $request->input('productDescription');
-
         $insert = DB::insert('insert into products (productName, productImg ,productCategory , productPrice , productDescription ) values (?, ? ,? , ? ,?)', [$productName, $productImg, $productCategory, $productPrice, $productDescription]);
-
-        return redirect('/Product')->with('messageRej', 'The data has been add user successfully');
+        return redirect('/Product')->with('messageRej', 'The data has been added successfully');
     }
 
     public function deleteProduct($id)
     {
         $usersInfo = DB::update('update products set isDeleted = ? where product_id = ?', [1, $id]);
-        return redirect('/Product')->with('message', 'The data has been Deleted successfully');
+        return redirect('/Product')->with('message', 'The product has been Deleted successfully');
     }
 
     public function editBox($id)
@@ -94,10 +92,8 @@ class AdminController extends Controller
         $Door_Opening = $request->input('Door_Opening');
         $Price = $request->input('Price');
         $TruckDes = $request->input('TruckDes');
-
-        $insert = DB::insert('insert into trucks (TruckImg, Dimention_L_W_H ,Deck_height ) values (?, ? ,? , ? ,? , ?)', [$TruckImg, $Dimention_L_W_H, $Deck_height, $Door_Opening, $Price, $TruckDes]);
-
-        return redirect('/Trucks')->with('messageRej', 'The data has been add user successfully');
+        $insert = DB::insert('insert into trucks (TruckImg, Dimention_L_W_H ,Deck_height,Door_Opening,Price,TruckDes ) values (?, ? ,? , ? ,? , ?)', [$TruckImg, $Dimention_L_W_H, $Deck_height, $Door_Opening, $Price, $TruckDes]);
+        return redirect('/Trucks')->with('message', 'The data has been add user successfully');
     }
 
     public function deleteTruck($id)
@@ -137,13 +133,13 @@ class AdminController extends Controller
         $Price = $request->input('Price');
         $insert = DB::insert('insert into labors (LaborFName, LaborLName ,Price ) values (?, ? ,? )', [$LaborFName, $LaborLName, $Price]);
 
-        return redirect('/Labors')->with('messageRej', 'The data has been add user successfully');
+        return redirect('/Labors')->with('message', 'The Team has been added successfully');
     }
 
     public function deleteLabor($id)
     {
         $usersInfo = DB::update('update labors set isDeleted = ? where Labor_id = ?', [1, $id]);
-        return redirect('/Labors')->with('message', 'The data has been Deleted successfully');
+        return redirect('/Labors')->with('message', 'The Team has been Deleted successfully');
     }
 
     #################################### showd ynamic data  #######################################

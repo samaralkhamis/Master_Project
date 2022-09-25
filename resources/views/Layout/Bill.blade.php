@@ -11,10 +11,14 @@
     <div class="container mb-5">
         <div class="d-flex justify-content-center row">
             <div class="col-md-10">
+                @if (session()->has('messageplaceorder'))
+                <div class=" alert alert-success ">
+                    {{ session()->get('messageplaceorder') }}
+                </div>
+            @endif
                 <div class="receipt bg-white p-3 rounded">
-                    <h4 class="mt-2 mb-3">Your order is confirmed!</h4>
-                    <h6 class="name">Hello {{ Auth::user()->name }}</h6><span class="fs-12 text-black-50">your order has
-                        been confirmed and will be shipped in two days </span>
+                    <h4 class="mb-3">Your order is confirmed!</h4>
+                    <h5 class="name">Hello {{ Auth::user()->name }}</h5>
                     <hr>
                     <div class="d-flex flex-row justify-content-between align-items-center order-details">
                         <div><span class="d-block fs-12">Order number</span><span class="font-weight-bold">OD44434324</span>

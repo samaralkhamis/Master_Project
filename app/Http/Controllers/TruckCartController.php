@@ -22,21 +22,21 @@ class TruckCartController extends Controller
         $add->TruckImg= $request->input('TruckImg');
         $add->Price= $request->input('Price');
         $add->save();
-        return redirect('/ShopTruck')->with('message','The data has been add Product successfully');
+        return redirect('/ShopTruck')->with('Truckmessage','The Truck has been added successfully');
 
     }
 
     public function DeleteTruck($id)
     {
         $Delete = DB::update('update truck_carts set isDeleted = ? where Truck_id = ?',[1,$id]);         
-        return redirect('/Cart')->with('Demessage','The data has been Deleted successfully');
+        return redirect('/Cart')->with('Deletemessage','The truck has been Deleted successfully');
     }
 
     public function updateCart(Request $request, $id)
     {
         $truckQuantity = $request->input('Quantity');
         DB::update('update truck_carts set Quantity = ? where TCart_id = ?', [ $truckQuantity, $id]);
-        return redirect('/Cart')->with('message', 'The data has been updated successfully');
+        return redirect('/Cart')->with('updatemessage', 'The Quantity of truck has been updated successfully');
 
     }
 }

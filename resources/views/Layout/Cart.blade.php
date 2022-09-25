@@ -21,6 +21,16 @@
     <!-- cart -->
     <div class="cart-section mt-150 mb-150">
         <div class="container">
+            @if (session()->has('Deletemessage'))
+                <div class="alert alert-success">
+                    {{ session()->get('Deletemessage') }}
+                </div>
+            @endif
+            @if (session()->has('updatemessage'))
+                <div class=" alert alert-success">
+                    {{ session()->get('updatemessage') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-9 col-md-12">
                     <div>
@@ -108,7 +118,7 @@
                                             </td>
                                         </tr>
                                         <?php
-                                        $C =+ $laborCart->Price;
+                                        $C = +$laborCart->Price;
                                         Session::put('$C', $C);
                                         ?>
                                     @endforeach
@@ -157,7 +167,7 @@
                                             </td>
                                         </tr>
                                         <?php
-                                        $B =+ ($trucksCart->Price * $trucksCart->Quantity);
+                                        $B = +($trucksCart->Price * $trucksCart->Quantity);
                                         Session::put('$B', $B);
                                         ?>
                                     @endforeach

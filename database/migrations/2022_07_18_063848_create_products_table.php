@@ -17,11 +17,11 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
 
             $table->bigIncrements('product_id');
-            $table->string('productName');
-            $table->float('productPrice');
-            $table->string('productDescription');
-            $table->string('productImg');
-            $table->string('productCategory');
+            $table->string('productName')->nullable();
+            $table->float('productPrice')->nullable();
+            $table->string('productDescription')->nullable();
+            $table->string('productImg')->nullable();
+            $table->string('productCategory')->nullable();
             $table->integer('isDeleted')->default('0');
 
             $table->timestamps();
