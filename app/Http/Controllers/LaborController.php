@@ -28,6 +28,7 @@ class LaborController extends Controller
         $add=new labor_cart();
         $add->Labor_id= $request->input('Labor_id');
         $add->LaborFName= $request->input('LaborFName');
+        $add->LaborLName= $request->input('LaborLName');
         $add->Price= $request->input('Price');
         $add->save();
         return redirect('/ShopLabor')->with('message','The data has been add Product successfully');

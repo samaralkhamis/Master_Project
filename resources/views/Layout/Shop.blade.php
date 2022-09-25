@@ -111,6 +111,7 @@
                                     <div class="single-latest-news">
                                         <a href="/SingleProduct/id/{{ $data->product_id }}">
                                             <input type="hidden" name="product_id" value={{ $data->product_id }}>
+                                            <input type="hidden" name="productName" value={{ $data->productName }}>
                                             <div>
                                                 <img src={{ $data->productImg }} alt="product" name="productImg"
                                                     class="latest-news-bg">
@@ -148,7 +149,7 @@
         {{-- </div> --}}
 
         <div style="overflow:auto;">
-            <div style="float:right;">
+            <div style="float:center;">
                 <a href="/ShopLabor" class="button btn btn-primary">Next</a>
             </div>
         </div>

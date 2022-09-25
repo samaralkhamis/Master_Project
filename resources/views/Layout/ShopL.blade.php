@@ -9,12 +9,10 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/steps.css') }}">
     <style>
-        
-
         .button {
             background-color: #F28123;
-            border:none;
-            font-size:20px;
+            border: none;
+            font-size: 20px;
         }
 
         .button:hover {
@@ -26,8 +24,8 @@
 
         .previous {
             background-color: #8c8a8a82;
-            border:none;
-            font-size:20px;
+            border: none;
+            font-size: 20px;
         }
 
         .previous:hover {
@@ -56,8 +54,8 @@
         .steps.finish {
             background-color: #F28123;
         }
-
     </style>
+
     <body>
 
         <!-- breadcrumb-section -->
@@ -76,12 +74,13 @@
         <!-- end breadcrumb section -->
 
         <ol class="ol-cards alternate" style="margin-left: 12%;">
-         
+
             <li style="--ol-cards-color-accent:#f68121">
-                    <div class="step"><i class="fa fa-user"></i></div>
-                    <div class="title">Step Two</div>
-                    <div class="content">Here You Can Choose What Suits Your Needs From laborers,To do Packaging From Here And Then Add Them To The Cart. </div>
-                </li>
+                <div class="step"><i class="fa fa-user"></i></div>
+                <div class="title">Step Two</div>
+                <div class="content">Here You Can Choose What Suits Your Needs From laborers,To do Packaging From Here And
+                    Then Add Them To The Cart. </div>
+            </li>
         </ol>
 
         <form>
@@ -96,19 +95,30 @@
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="single-latest-news">
                                                     <div class="news-text-box">
-                                                        <h3><a href="/SingleLabor/id/{{ $labor->Labor_id }}"
-                                                                name="LaborFName">{{ $labor->LaborFName }}-{{ $labor->LaborLName }}
-                                                            </a></h3>
-                                                        <p class="blog-meta"><i class="fas fa-dollar-sign"></i>Availabilty
-                                                            (status) : 
-                                                            {{-- <span class="author">   {{ $labor->Status }} JD --}}
-                                                            </span>
-                                                        </p>
-                                                        {{-- <p class="excerpt">{{ $labor->productDescription }}</p>
-                                                        <p class="excerpt">Category : Product /{{ $labor->productCategory }}</p>
-                                                        <a href="" class="btn" style="background-color: #F28123;">Add To Cart <i
-                                                                class="fas fa-angle-right"></i></a> --}}
-                                                     </div>
+                                                        <form action="{{ url('/CreateLCart') }}" method="post">
+
+                                                            @csrf
+                                                            <input type="hidden" name="Labor_id"
+                                                                value={{ $labor->Labor_id }}>
+                                                            <input type="hidden" name="LaborFName"
+                                                                value={{ $labor->LaborFName }}>
+                                                            <input type="hidden" name="LaborLName"
+                                                                value={{ $labor->LaborLName }}>
+                                                            <input type="hidden" name="Price" value={{ $labor->Price }}>
+
+                                                            <h3 name="LaborFName">
+                                                                {{ $labor->LaborFName }}
+                                                            </h3>
+                                                            <p class="blog-meta">
+                                                                <strong>PRICE :{{ $labor->Price }} JD</strong>
+                                                            </p>
+                                                            <p class="blog-meta">
+                                                                {{ $labor->LaborLName }}
+                                                            </p>
+                                                            <button type="submit" style="background-color: #F28123;border:#F28123">Add To
+                                                                Cart <i class="fas fa-angle-right"></i></button>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -120,10 +130,10 @@
                         </div>
                     </div>
                 </section>
-            </div> 
+            </div>
 
             <div style="overflow:auto;">
-                <div style="float:right;">
+                <div style="float:center;">
                     <a href="/Shop" class="previous btn btn-primary">Previous</a>
                     <a href="/ShopTruck" class="button btn btn-primary">Next</a>
                 </div>

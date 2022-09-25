@@ -31,4 +31,12 @@ class TruckCartController extends Controller
         $Delete = DB::update('update truck_carts set isDeleted = ? where Truck_id = ?',[1,$id]);         
         return redirect('/Cart')->with('Demessage','The data has been Deleted successfully');
     }
+
+    public function updateCart(Request $request, $id)
+    {
+        $truckQuantity = $request->input('Quantity');
+        DB::update('update truck_carts set Quantity = ? where TCart_id = ?', [ $truckQuantity, $id]);
+        return redirect('/Cart')->with('message', 'The data has been updated successfully');
+
+    }
 }

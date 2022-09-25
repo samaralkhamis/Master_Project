@@ -123,7 +123,7 @@
 
 								@foreach ($trucksCart as $trucksCart)
                                     <tr>
-										<td>{{ $trucksCart->Truck_id }}</td>
+										<td>Truck Num.{{ $trucksCart->Truck_id }}</td>
 										<td class="product-price">{{ $trucksCart->Price * $trucksCart->Quantity }} JD</td>
 
                                         <input type="hidden" name="Truck" value={{ $trucksCart->Truck_id }}

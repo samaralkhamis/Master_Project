@@ -61,6 +61,8 @@ Route::get('/SingleLabor/id/{id}', [LaborController::Class,'SingleLabor']);
 
 Route::get('/CreateCart', [ProductCartController::Class,'viewCart']);
 Route::post('/CreateCart', [ProductCartController::class, 'AddToCart']);
+Route::post('/updateCart/id/{id}', [ProductCartController::class,'updateCart']);
+Route::post('/updateTCart/id/{id}', [TruckCartController::class,'updateCart']);
 
 Route::get('/CreateTCart', [TruckCartController::Class,'viewTCart']);
 Route::post('/CreateTCart', [TruckCartController::class, 'AddToTruckCart']);

@@ -122,7 +122,7 @@
                 </section>
             </div>
             <div style="overflow:auto;">
-                <div style="float:right;">
+                <div style="float:center;">
                     <a href="/ShopLabor" class="previous btn btn-primary">Previous</a>
                     <a href="/Cart" class="button btn btn-primary">Next</a>
                 </div>
